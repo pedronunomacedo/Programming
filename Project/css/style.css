@@ -1,0 +1,46 @@
+/* Main menu */
+body > header {
+    position: relative;
+    background-color: rgb(19, 218, 229);
+}
+
+body > header > #main-logo, #main-title {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Logo */
+body > header > a > img {
+    height: 100px;
+}
+
+/* Main title ("FOOD") */
+#main-title {
+    font-size: 60px;
+    color: black;
+}
+#main-title h1 {
+    text-decoration: none;
+}
+
+/* Categoreies Horizontal Menu */
+.categories-menu {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.categories-menu li {
+    
+}
+
+.categories-menu li > a {
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    display: inline-block;
+    
+}

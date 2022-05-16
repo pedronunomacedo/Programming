@@ -1,0 +1,19 @@
+<!doctype html>
+
+<html>
+<head>
+<title> This is the title sucker! </title>
+</head>
+
+<body>
+<h1> The world ends in 2012! </h1>
+<h2> The world ends in 2012! </h2>
+<h3> The world ends in 2012! </h3>
+<h4> The world ends in 2012! </h4>
+<h5> The world ends in 2012! </h5>
+<h6> The world ends in 2012! </h6>
+<h7> The world ends in 2012! </h7> // Its not a header so is interpreted as text in the body tag
+I am in the body
+</body>
+
+</html> 

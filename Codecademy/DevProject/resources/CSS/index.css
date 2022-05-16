@@ -1,0 +1,21 @@
+* {
+    font-family: Helvetica, Arial, sans-serif;
+  }
+   
+   
+  h1 {
+    color: rgb(68, 126, 165);
+  }
+   
+   
+  p, 
+  li {
+    font-size: 18px; /* Size of the bullet point in pixels */
+    list-style-type: square; /* Type of the bullet point */
+    color: black; /* Color of the bullet point */
+  }
+   
+   
+  a {
+    text-decoration: none;
+  }

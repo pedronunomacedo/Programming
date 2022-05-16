@@ -1,0 +1,15 @@
+.badge-warning {
+    color: #1e2022; /* color text */
+    background-color: #f5ca99; /* color of the rectangle */
+}
+
+.badge {
+    padding: .275rem .5em;
+    font-size: 75%;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: .3125rem; /* defines the raduius of the curved edges of the rectangle */
+
+}
