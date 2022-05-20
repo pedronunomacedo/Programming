@@ -52,7 +52,7 @@ function addCategoryRestaurants(category) {
         restaurantPicture.appendChild(tag);
         restaurantAnchor.appendChild(restaurantPicture);
         restaurantAnchor.className = "unactive";
-        restaurantAnchor.href = "restaurant.html?restaurant=restaurant" + i;
+        restaurantAnchor.href = "restaurant.html?restaurant=restaurant" + i + "&category=" + category;
         restaurantsList.appendChild(restaurantAnchor);
     }
 }

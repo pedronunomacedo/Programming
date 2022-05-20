@@ -1,25 +1,34 @@
+var restaurant = null;
+var category = null;
+
 window.onload = function() {
-    var restaurant = getUrlParameters();
+    getUrlParameters();
     // addBackgroundColor(category);
     changePageTitle(restaurant);
-    addMainImage(restaurant);
+    addMainImage(restaurant, category);
     addRestaurantTitle(restaurant);
     addRestaurantDescription(restaurant);
-    addRestaurantPlates(restaurant);
+    addRestaurantPlates(restaurant, category);
 }
 
 
 function getUrlParameters() {
     var url_string = window.location.href;
     var url = new URL(url_string);
-    var rest = url.searchParams.get("restaurant");
-    return rest;
+    restaurant = url.searchParams.get("restaurant");
+    category = url.searchParams.get("category");
 }
 
 
 function changePageTitle(restaurant) {
     var restaurantCapitalized = restaurant.charAt(0).toUpperCase() + restaurant.slice(1);
     document.title = restaurantCapitalized;
+}
+
+
+function addMainImage(restaurant, category) {
+    var mainImage = document.getElementById("main-image");
+    mainImage.src = "img/" + category + "/restaurants/" + restaurant + ".png";
 }
 
 
@@ -30,29 +39,37 @@ function addRestaurantTitle(restaurant) {
 }
 
 
-function addMainImage(restaurant) {
-    var mainImage = document.getElementById("main-image");
-    mainImage.src = "img/main_restaurant.png";
-}
-
-
 function addRestaurantDescription(restaurant) {
+    var classification = document.getElementById("classification");
+    classification.innerHTML = 4.7;
+
+    var numberClassifications = document.getElementById("number-classifications");
+    numberClassifications.innerHTML = "(" + 56 + " classificações)";
+
     var moreInfo = document.getElementById("more-info");
     moreInfo.href = "restaurant-description.html?restaurant=" + restaurant;
 }
 
 
-function addRestaurantPlates(restaurant) {
+function addRestaurantPlates(restaurant, category) {
     var menuList = document.getElementById("vertical-menu");
     var platesList = document.getElementById("plates");
+    var platesTitle = document.createElement("h3");
+    platesTitle.innerHTML = "Plates";
+    platesList.appendChild(platesTitle);
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 1; i < 5; i++) {
         var platePicture = document.createElement("picture");
+        platePicture.className = "plate";
         var plateImg = document.createElement("img");
         var tag = document.createElement("figcaption");
-
-        platePicture.href = "img/pizza/main_image.png";
+        
+        plateImg.src = "img/" + category + "/plates/image" + i + ".png";
         tag.innerHTML = "Plate" + i;
+
+        platePicture.appendChild(plateImg);
+        platePicture.appendChild(tag);
+
         platesList.appendChild(platePicture);
     }
     
