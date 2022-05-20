@@ -1,5 +1,7 @@
 window.onload = function() {
     var category = getUrlParameters();
+    // addBackgroundColor(category);
+    changePageTitle(category);
     addMainImage(category);
     addCategoryTitle(category);
     addCategoryRestaurants(category);
@@ -11,6 +13,12 @@ function getUrlParameters() {
     var url = new URL(url_string);
     var cat = url.searchParams.get("category");
     return cat;
+}
+
+
+function changePageTitle(category) {
+    var categoryCapitalized = category.charAt(0).toUpperCase() + category.slice(1);
+    document.title = categoryCapitalized;
 }
 
 
@@ -30,6 +38,7 @@ function addMainImage(category) {
 function addCategoryRestaurants(category) {
     var restaurantsList = document.getElementById('list-restaurants');
     for (let i = 1; i < 8; i++) {
+        var restaurantAnchor = document.createElement('a');
         var restaurantPicture = document.createElement("picture");
         restaurantPicture.className = "restaurant";
         restaurantPicture.id = "restaurant" + i;
@@ -39,9 +48,19 @@ function addCategoryRestaurants(category) {
         image.src = "img/" + category + "/restaurants/restaurant" + i + ".png";
         var tag = document.createElement("figcaption");
         tag.innerHTML = "Restaurant" + i;
-
         restaurantPicture.appendChild(image);
         restaurantPicture.appendChild(tag);
-        restaurantsList.appendChild(restaurantPicture);
+        restaurantAnchor.appendChild(restaurantPicture);
+        restaurantAnchor.className = "unactive";
+        restaurantAnchor.href = "restaurant.html?restaurant=restaurant" + i;
+        restaurantsList.appendChild(restaurantAnchor);
     }
 }
+
+// function addBackgroundColor(category) {
+//     var background = document.getElementsByTagName("body");
+//     switch(category) {
+//         case sushi: background = "#D89D84"; break;
+//         case pizza: background = "#E8262E"; break;
+//     }
+// }

@@ -25,7 +25,7 @@
 }
 
 #restaurants {
-    display: inline-block;
+    display: block;
     text-align: left;
 }
 
@@ -45,6 +45,6 @@
 }
 
 .restaurant > figcaption {
-    text-align: center; /* Center the image (img) with the name of the image (figcaption) */
+    text-align: center; /* Center the image (img) with the legend of the image (figcaption) */
     font-size: 20px;
 }
